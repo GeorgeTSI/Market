@@ -1,0 +1,53 @@
+<div class="dashboard-container">
+  <mat-card class="dashboard-card">
+    <h2>Company Market Prices</h2>
+    <div class="price-list">
+      <mat-card *ngFor="let price of companyMarketPrices" class="price-item">
+        <div class="price-info">
+          <span class="company">{{ price.companyName }}</span> 
+          in 
+          <span class="market">{{ price.marketName }}</span>: 
+          <strong>{{ price.price | currency }}</strong>
+        </div>
+      </mat-card>
+    </div>
+  </mat-card>
+
+  <!-- Update Price Form -->
+  <mat-card class="update-form">
+    <h3>Update Price</h3>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Company</mat-label>
+      <mat-select [(ngModel)]="companyId">
+        <mat-option *ngFor="let company of companies" [value]="company.id">
+          {{ company.name }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Market</mat-label>
+      <mat-select [(ngModel)]="marketId">
+        <mat-option *ngFor="let market of markets" [value]="market.id">
+          {{ market.name }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <div class="price-container">
+      <mat-form-field appearance="outline" class="price-field">
+        <mat-label>Price</mat-label>
+        <input matInput type="number" [(ngModel)]="price" readonly />
+      </mat-form-field>
+      <button mat-raised-button color="primary" (click)="getPrice()">Get Price</button>
+    </div>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>New Price</mat-label>
+      <input matInput type="number" [(ngModel)]="newPrice" />
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" (click)="onPriceUpdate()">Update Price</button>
+  </mat-card>
+</div>
