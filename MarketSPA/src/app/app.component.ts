@@ -22,19 +22,18 @@ export class AppComponent implements OnInit{
 
   ngOnInit(): void {
     this.authService.login();
-    setTimeout(() => {
-      this.priceService.priceUpdates$.subscribe((prices) => {
-        this.companyMarketPrices = prices;
-      });
-     
-      this.priceService.getCompanies().subscribe((data) => {
-        this.companies = data;
-      });
-  
-      this.priceService.getMarkets().subscribe((data) => {
-        this.markets = data;
-      });
-    }, 5000);
+
+    this.priceService.priceUpdates$.subscribe((prices) => {
+      this.companyMarketPrices = prices;
+    });
+   
+    this.priceService.getCompanies().subscribe((data) => {
+      this.companies = data;
+    });
+
+    this.priceService.getMarkets().subscribe((data) => {
+      this.markets = data;
+    });
   }
 
   onPriceUpdate() {
