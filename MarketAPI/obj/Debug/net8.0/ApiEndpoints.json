@@ -1,0 +1,95 @@
+[
+  {
+    "ContainingType": "MarketAPI.Auth.AuthController",
+    "Method": "Login",
+    "RelativePath": "api/auth/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "MarketAPI.Auth.LoginRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MarketAPI.Controllers.CompanyMarketController",
+    "Method": "GetCompanies",
+    "RelativePath": "api/CompanyMarket/companies",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MarketAPI.Controllers.CompanyMarketController",
+    "Method": "GetMarkets",
+    "RelativePath": "api/CompanyMarket/markets",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MarketAPI.Controllers.CompanyMarketPriceController",
+    "Method": "GetAllPrices",
+    "RelativePath": "api/CompanyMarketPrice",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MarketAPI.Controllers.CompanyMarketPriceController",
+    "Method": "GetPrice",
+    "RelativePath": "api/CompanyMarketPrice/{companyId}/{marketId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "companyId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "marketId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MarketAPI.Controllers.CompanyMarketPriceController",
+    "Method": "UpdatePrice",
+    "RelativePath": "api/CompanyMarketPrice/{companyId}/{marketId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "companyId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "marketId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "priceUpdate",
+        "Type": "MarketAPI.Entities.PriceUpdateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
